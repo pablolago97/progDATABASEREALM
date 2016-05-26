@@ -7,7 +7,7 @@ class ConexionSQL {
     public static void main(String[] args) throws SQLException {
         
         
-        Conexion_database cdb = new Conexion_database();
+        Conexion_database.conexion();
         Interfazdb idb = new Interfazdb();
         idb.setVisible(true);
         

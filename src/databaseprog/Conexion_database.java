@@ -10,18 +10,28 @@ import java.util.logging.Logger;
 
 public class Conexion_database {
 
-    Connection co = null;
+    static Connection co = null;
 
-    public Connection conexion() {
+    public static void conexion() {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            co = DriverManager.getConnection("jdbc:mysql://127.0.0.1/mysqlprog?user=root&password=39510486Mpl-bp");
+            co = DriverManager.getConnection("jdbc:mysql://10.0.0.254/bergonpazos?user=bergonpazos&password=bergonpazos");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, e);
         }
-return co;
+
     }
+
+    public Connection getCo() {
+        return co;
+    }
+
+    public void setCo(Connection co) {
+        Conexion_database.co = co;
+    }
+    
+    
 }
